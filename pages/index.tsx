@@ -11,6 +11,42 @@ import Akon from "../public/akon.jpeg";
 import James from "../public/james.jpeg";
 
 
+const someapi = [
+  {
+    pageNumber: 1,
+    image: Ariana,
+    artistName: "The weekend ft Ariana",
+    songName: "Die for you (Remix)"
+  },{
+    pageNumber: 2,
+    image: Vaan,
+    artistName: "Ilayaraaja",
+    songName: "Vaanam Mella"
+  },{
+    pageNumber: 3,
+    image: Ed,
+    artistName: "Ed Sheeran",
+    songName: "Photograph"
+  },{
+    pageNumber: 4,
+    image: Vaa,
+    artistName: "Vaa",
+    songName: "Vaa songs Remix"
+  },
+  {
+    pageNumber: 5,
+    image: Akon,
+    artistName: "Akon",
+    songName: "Convict Music Remix"
+  },
+  {
+    pageNumber: 6,
+    image: James,
+    artistName: "James",
+    songName: "Brave Heart"
+  }
+]
+
 export default function Home() {
   return (
     <>
@@ -31,113 +67,22 @@ export default function Home() {
         <section className="md:-mt-20">
 
           <div className="px-5 py-2 bg-white mb-10 md:shadow-2xl md:mx-40">
-            <ul>
-              <li className="flex justify-between">
-                <div className="flex">
-                  <span className="text-xl font-bold mr-3">1</span> 
-                  <span> <Image src={Ariana} alt='' width={100} /> </span>
-                   <span className="text-xl font-bold ml-5">Die for you (remix) 
-                    <p className="text-slate-600 text-sm">The weekend ft Ariana</p>
-                   </span> 
-                </div>
-                <div>
-                  <p>2,000,200</p>
-                </div>
-              </li>
-
-              <li className="flex justify-between mt-5">
-                <div className="flex">
-                  <span className="text-xl font-bold mr-3">2</span> 
-                  <span> <Image src={Vaan} alt='' width={100} /> </span>
-                   <span className="text-2xl font-bold ml-5">Vaanam Mella 
-                    <p className="text-slate-600 text-sm">Ilayaraaja</p>
-                   </span> 
-                </div>
-                <div>
-                  <p>2,000,200</p>
-                </div>
-              </li>
-
-              <li className="flex justify-between mt-5">
-                <div className="flex">
-                  <span className="text-xl font-bold mr-3">3</span> 
-                  <span> <Image src={Ed} alt='' width={100} /> </span>
-                   <span className="text-2xl font-bold ml-5"> Photograph
-                    <p className="text-slate-600 text-sm">Ed sheeran</p>
-                   </span> 
-                </div>
-                <div>
-                  <p>2,000,200</p>
-                </div>
-              </li>
-
-              <li className="flex justify-between mt-5">
-                <div className="flex">
-                  <span className="text-xl font-bold mr-3">4</span> 
-                  <span> <Image src={Sasha} alt='' width={100} /> </span>
-                   <span className="text-xl font-bold ml-5">Is It Just Me? 
-                    <p className="text-slate-600 text-sm">Sasha Alex Slaon</p>
-                   </span> 
-                </div>
-                <div>
-                  <p>2,000,200</p>
-                </div>
-              </li>
-
-              <li className="flex justify-between mt-5">
-                <div className="flex">
-                  <span className="text-xl font-bold mr-3">5</span> 
-                  <span> <Image src={Vaa} alt='' width={100} /> </span>
-                   <span className="text-xl font-bold ml-5">Vaa Vaathi 
-                    <p className="text-slate-600 text-sm">Dhanush</p>
-                   </span> 
-                </div>
-                <div>
-                  <p>2,000,200</p>
-                </div>
-              </li>
-
-              <li className="flex justify-between mt-5">
-                <div className="flex">
-                  <span className="text-xl font-bold mr-3">6</span> 
-                  <span> <Image src={George} alt='' width={100} /> </span>
-                   <span className="text-xl font-bold ml-5">Carless Whisper 
-                    <p className="text-slate-600 text-sm">George Michael</p>
-                   </span> 
-                </div>
-                <div>
-                  <p>2,000,200</p>
-                </div>
-              </li>
-
-              <li className="flex justify-between mt-5">
-                <div className="flex">
-                  <span className="text-xl font-bold mr-3">7</span> 
-                  <span> <Image src={Akon} alt='' width={100} /> </span>
-                   <span className="text-xl font-bold ml-5">Over The Edge 
-                    <p className="text-slate-600 text-sm">Akon</p>
-                   </span> 
-                </div>
-                <div>
-                  <p>2,000,200</p>
-                </div>
-              </li>
-
-              <li className="flex justify-between mt-5">
-                <div className="flex">
-                  <span className="text-xl font-bold mr-3">8</span> 
-                  <span> <Image src={James} alt='' width={100} /> </span>
-                   <span className="text-xl font-bold ml-5">Gift Of A Thistle 
-                    <p className="text-slate-600 text-sm">James Horner</p>
-                   </span> 
-                </div>
-                <div>
-                  <p>2,000,200</p>
-                </div>
-              </li>
-            </ul>
+              <ul>
+                {someapi.map((some)=>{
+                  return(
+                    <li className="flex justify-between mt-5" key={some.pageNumber}>
+                      <div className="flex">
+                      <span className="text-xl font-bold mr-3">{some.pageNumber}</span> 
+                      <span> <Image src={some.image} alt='' width={100} /> </span>
+                      <span className="text-xl font-bold ml-5">{some.songName} 
+                        <p className="text-slate-600 text-sm">{some.artistName}</p>
+                      </span>    
+                      </div>
+                    </li>
+                  )
+                })}
+              </ul>
           </div>
-
 
         </section>
       </main>
